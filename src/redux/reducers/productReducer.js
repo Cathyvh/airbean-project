@@ -1,5 +1,12 @@
 const initialState = {
   products: [],
+
+  cart:{
+    
+      items: [],
+      total: 0
+  }
+
 };
 export const productReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -10,17 +17,35 @@ export const productReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
+export const addProductReducer = (state= initialState.cart, action ) =>{
+  switch(action.type){
+    case 'ADD_PRODUCT':{
+            //let addedProduct = state.products.find(products => state.products.title === action.payload)
+            
+             return{
+                ...state,
+                 items: [...state.items, action.payload],
+                 total: state.total + action.payload.price
 
-export const selectedProductReducer = (state = {}, { type, payload }) => {
-  switch (type) {
-    case "SELECTED_PRODUCT":
-      return {
-        ...state,
-        ...payload,
-      };
-    case "REMOVE_SELECTED_PRODUCT":
-      return {};
-    default:
-      return state;
+                  }
+    }
+        default: {
+        return state;
+    }
   }
-};
+}
+export const totalReducer = (state= initialState.cart, action ) =>{
+  switch(action.type){
+    case 'CALC_TOTAL':{
+             return{
+                ...state,
+                 total: state.total + action.payload
+
+                  }
+    }
+        default: {
+        return state;
+    }
+  }
+}
+

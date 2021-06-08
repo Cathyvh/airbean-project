@@ -5,6 +5,17 @@ export const setProducts = (products) => {
     }
 }
 
+
+export const addProduct = (product) => {
+    return {
+        type: "ADD_PRODUCT",
+        payload: product
+    }
+}
+
+
+
+
 export const selectedProduct = (product) => {
   return {
       type: "SELECTED_PRODUCT",

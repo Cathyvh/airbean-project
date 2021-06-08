@@ -7,6 +7,7 @@ import Status from './comps/statusComp'
 import Profile from './comps/profileComp'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Coffee from './comps/coffeeComp';
+import Cart from './comps/CartComp';
 import ProductListing from "./comps/ProductList";
 
 function App() {
@@ -22,6 +23,9 @@ function App() {
             <Route path="/" exact component={ProductListing} />
             <Route exact path="/profile"> 
               <Profile/> 
+            </Route>
+            <Route exact path="/cart"> 
+              <Cart/> 
             </Route>
             <Route exact path="/status" > 
               <Status/> 

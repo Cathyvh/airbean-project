@@ -1,0 +1,19 @@
+.container {
+    margin: 0 auto;
+
+}
+
+
+
+
+.item {
+    display: flex;
+    justify-content: center;
+
+}
+
+.item-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
