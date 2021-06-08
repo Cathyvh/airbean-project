@@ -1,0 +1,51 @@
+.status {
+
+    background-color: #E5674E;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: fixed;
+
+
+}
+
+
+
+.drone {
+    width: 13rem;
+    margin: 2rem 0;
+}
+
+.number {
+
+    opacity: 0.7;
+
+}
+
+.mins {
+    font-family: 'Work Sans',
+        sans-serif;
+    font-weight: normal;
+}
+
+button {
+    background-color: white;
+    padding: 0.7rem 2.5rem;
+    border-radius: 50px;
+    margin-top: 3.5rem;
+    border: none;
+}
+
+.link {
+    color: #2F2926 !important;
+    font-size: 24px;
+    font-weight: bold;
+
+}
+
+.status-content {
+    margin: 0 2rem;
+}

@@ -1,0 +1,98 @@
+.navBar {
+    display: flex;
+    height: 0;
+
+
+}
+
+.nav-header {
+    position: relative;
+}
+
+.menuNav {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: #2F2926;
+    height: 100%;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(-100%);
+    color: white;
+}
+
+.headerImg {
+    position: absolute;
+    width: 100%;
+    max-width: 100vw;
+}
+
+
+.menuNav.showMenu {
+    width: 100%;
+    max-width: 100vw;
+    transition: transform 0.3s ease-in-out;
+    transform: translateX(0);
+
+}
+
+.hamburger {
+    display: flex;
+    z-index: 1;
+
+
+}
+
+a {
+    color: white;
+    font-size: 32px;
+    text-decoration: none;
+
+}
+
+/* Unvisited link  */
+a:visited {
+    color: white;
+}
+
+/* Visited link    */
+a:hover {
+    color: white;
+}
+
+/* Mouse over link */
+a:active {
+    color: white;
+}
+
+li {
+
+    list-style-type: none;
+    padding: 1.5rem 0 1.5rem 0;
+}
+
+#line {
+    width: 3rem;
+    border-bottom: white solid 1px;
+    opacity: 0.2;
+
+}
+
+.hamburger-react {
+    margin: 0.6rem;
+    color: #2F2926;
+    background: white;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    z-index: 1;
+    position: relative;
+
+}

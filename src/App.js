@@ -1,23 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+
+import './style.css';
+//import store from './redux'
+import Menu from './comps/menuComp'
+import About from './comps/aboutComp'
+import Status from './comps/statusComp'
+import Profile from './comps/profileComp'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Coffee from './comps/coffeeComp';
+import ProductListing from "./comps/ProductList";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+      <Menu/>
+      
+        <Switch>
+            <Route exact path="/about"> 
+              <About/> 
+            </Route>
+            <Route path="/" exact component={ProductListing} />
+            <Route exact path="/profile"> 
+              <Profile/> 
+            </Route>
+            <Route exact path="/status" > 
+              <Status/> 
+            </Route>
+        </Switch>
+      </BrowserRouter>
     </div>
   );
 }

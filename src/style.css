@@ -1,4 +1,27 @@
+html {
+  background-color: #F3E4E1;
+  height: 100%;
+}
+
 .App {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100vw;
+
+
+}
+
+
+/*
+pink: #F3E4E1
+brown: #2F2926
+dark green: #0E927D
+light green: #58BF94
+ornage: #E5674E
+
+/* .App {
   text-align: center;
 }
 
@@ -35,4 +58,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
