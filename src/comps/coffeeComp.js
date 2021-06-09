@@ -8,7 +8,7 @@ import { addProduct } from "../redux/action"
 
 
 
-const ProductComponent = () => {
+const Coffee = () => {
   const products = useSelector((state) => state.allProducts.products)
   const cart = useSelector((state) => state.cart)
   const dispatch = useDispatch();
@@ -26,29 +26,32 @@ const ProductComponent = () => {
 
     return (
       <div className="item" key={id}>
-        <a onClick={handleClick}>
-          <img src={AddBtn} alt="" />
-        </a>
-        <div className="">
-
-          <div className="content">
-            <div className="item-header">
-              <h3 className="title"> {title} </h3>
-              <h3 className="price"> {price} kr</h3>
-            </div>
-
-            <p className="desc">{desc}</p>
+        <div className="item-content">
+          <div btn-div>
+            <a className="addbtn" onClick={handleClick}>
+              <img src={AddBtn} alt="" />
+            </a>
           </div>
 
+          <div className="title-div">
+            <h2 id="left" className="title"> {title} </h2>
+            <p id="left" className="desc">{desc}</p>
+          </div>
+          <div className="price-div">
+            <h2 className="price"> {price} kr</h2>
+          </div>
         </div>
+
       </div>
+
     );
   });
 
 
   return (
-    <div>{renderList} </div>
+    <div className=" ">{renderList} </div>
   )
 }
 
-export default ProductComponent;
+export default Coffee
+  ;

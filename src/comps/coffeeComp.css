@@ -1,19 +1,56 @@
 .container {
-    margin: 0 auto;
-
-}
-
-
-
-
-.item {
+    margin: 7rem auto;
+    text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 
 }
 
-.item-header {
+.item {
+    display: flex;
+    max-width: 100vw;
+    width: 100vw;
+    margin: 1rem 0;
+}
+
+
+.title .price .desc {
+    font-size: 23px;
+    margin: 0;
+}
+
+.title {
+    margin: 0;
+    height: 2rem;
+
+}
+
+.price {
+    margin: 0;
+    height: 2rem;
+
+}
+
+.desc {
+    margin-top: 0.5rem;
+    font-size: 12px;
+
+}
+
+.item-content {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    max-width: 100%;
+    width: 100vw;
+    justify-content: space-evenly;
+
+}
+
+
+.title-div {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: -1rem;
 }

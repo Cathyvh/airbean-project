@@ -2,7 +2,6 @@ const initialState = {
   products: [],
 
   cart:{
-    
       items: [],
       total: 0
   }
