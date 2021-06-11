@@ -8,7 +8,7 @@ import { applyMiddleware, createStore } from 'redux'
 //import rootReducer from '../redux/rootReducer'
 import thunk from 'redux-thunk'
 import store from './redux/store'
-
+import { reduxForm } from 'redux-form'
 
 
 
@@ -16,9 +16,9 @@ ReactDOM.render(
   <React.StrictMode>
     
     <Provider store={store}>
-    <App />
+      <App />
     </Provider>
-    
+   
   </React.StrictMode>,
   document.getElementById('root')
 );

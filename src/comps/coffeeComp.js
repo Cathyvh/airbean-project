@@ -20,14 +20,12 @@ const Coffee = () => {
     function handleClick() {
       dispatch(addProduct(product))
 
-
-
     }
 
     return (
       <div className="item" key={id}>
         <div className="item-content">
-          <div btn-div>
+          <div>
             <a className="addbtn" onClick={handleClick}>
               <img src={AddBtn} alt="" />
             </a>

@@ -1,12 +1,39 @@
 const initialState = {
   products: [],
-
+  users:  {
+      userName: "",
+      passWord: "",
+      accountId: ""
+    },
   cart:{
       items: [],
       total: 0
-  }
-
+  },
+  open: false
 };
+
+export const userReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "SET_USERS":
+      return { ...state, users: payload };
+
+    default:
+      return state;
+  }
+};
+
+
+export const openCart = (state= initialState, action)=>{
+  switch(action.type){
+    case 'OPEN_CART':
+      return{...state, open: !state.open  }
+      default:
+      return state;
+    
+  }
+}
+
+
 export const productReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case "SET_PRODUCTS":

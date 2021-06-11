@@ -2,17 +2,25 @@
 import { useState } from 'react';
 import Hamburger from 'hamburger-react'
 import { Link, } from 'react-router-dom';
-import { useSelector } from "react-redux";
+import { useSelector , useDispatch} from "react-redux";
+import Cart from './CartComp'
 import './menu.css'
+import { openCart } from "../redux/action"
+
 import headerImg from '../img/header.png'
 import bag from '../img/bag.svg'
 
-
 export default function Menu() {
-
     const amount = useSelector((state) => state.addProduct.items.length)
-
+    const open = useSelector((state) => state.openCart.open)
     const [isOpen, setOpen] = useState(false)
+    const dispatch = useDispatch();
+    // const [isCartOpen, setCartOpen] = useState(false)
+    
+    // const handleCartOpen = () =>{
+    //   dispatch(openCart(open))
+    // }
+    
 
     const handleOpen = () => {
         setOpen(!isOpen);
@@ -21,7 +29,7 @@ export default function Menu() {
     const closeMenu = () => {
         setOpen(false)
     }
-
+ 
     return (
         <div className="navBar">
             {/* <img className="headerImg" src={headerImg} alt="header" /> */}
@@ -37,12 +45,11 @@ export default function Menu() {
                     />
                 </div>
                 <div className="wrapper">
-                    <Link to="/cart"><button className="cart-button">
+                    {/* <button onClick={handleCartOpen}className="cart-button" >
                         <span > {amount} </span>
                         <img className="img" src={bag} alt="" />
-                    </button>
-
-                    </Link>
+                    </button> */}
+                    
                 </div>
             </div>
 
@@ -65,7 +72,9 @@ export default function Menu() {
                     </li>
                 </ul>
             </div>
-
+            {/* <div className={` cart-container ${isCartOpen ? "showCart" : ""}`}>
+                    <Cart/>
+            </div>  */}
 
         </div>
 

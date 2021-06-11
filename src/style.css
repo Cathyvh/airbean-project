@@ -1,6 +1,6 @@
 html {
   background-color: #F3E4E1;
-  height: 100%;
+
 }
 
 .App {
@@ -13,6 +13,10 @@ html {
 
 }
 
+form {
+  margin-top: 10rem;
+  margin-left: 5rem;
+}
 
 /*
 pink: #F3E4E1
