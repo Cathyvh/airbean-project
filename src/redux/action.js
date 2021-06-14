@@ -1,11 +1,25 @@
 
 
-export const setUsers = (users) => {
+export const thisUser = (values) => {
     return {
-        type: "SET_USERS",
-        payload: users
+        type: "THIS_USER",
+        payload: values
     }
 }
+
+export const setUsers = (values) => {
+    return {
+        type: "SET_USERS",
+        payload: values
+    }
+}
+export const addId = (id) => {
+    return {
+        type: "ADD_ID",
+        payload: id
+    }
+}
+
 
 // export function addUser(values, callback) {
 
@@ -26,6 +40,20 @@ export const setProducts = (products) => {
     return {
         type: "SET_PRODUCTS",
         payload: products
+    }
+}
+
+export const addOrder = (cart) => {
+    return {
+        type: "ADD_ORDER",
+        payload: cart
+    }
+}
+
+export const getId = (userName) => {
+    return {
+        type: "GET_ID",
+        payload: userName
     }
 }
 

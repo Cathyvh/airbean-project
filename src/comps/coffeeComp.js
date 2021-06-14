@@ -5,6 +5,7 @@ import AddBtn from '../img/add.png'
 import './coffeeComp.css'
 import { useState } from 'react';
 import { addProduct } from "../redux/action"
+import LoginForm from './loginform'
 
 
 
@@ -23,7 +24,10 @@ const Coffee = () => {
     }
 
     return (
+
+
       <div className="item" key={id}>
+     
         <div className="item-content">
           <div>
             <a className="addbtn" onClick={handleClick}>

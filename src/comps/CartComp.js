@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import './cart.css'
 import { openCart } from "../redux/action"
-import { addProduct } from "../redux/action"
+import { addOrder } from "../redux/action"
 import bag from '../img/bag.svg'
 
 
@@ -15,9 +15,31 @@ const Cart = () => {
     const amount = useSelector((state) => state.addProduct.items.length)
     const dispatch = useDispatch();
     console.log(open.state, "test")
+
+    async function postOrder(data){
+    try{
+        let response = await fetch ('http://localhost:5000/api/order', {
+            method: 'POST',
+            headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+      },
+            body: JSON.stringify(data)
+        })
+        let responseJSON = await response.json()
+        return responseJSON
+        } catch(error) {
+        console.log(error)
+    }
+}
     
     const handleCartOpen = () =>{
       dispatch(openCart(open))
+    }
+    const handleClick = () =>{
+      postOrder({cart})
+        .then(data => console.log(data))
+        dispatch(addOrder(cart))
     }
     
 
@@ -58,7 +80,7 @@ const Cart = () => {
                     <h3>Total</h3> <h3>{total}</h3>
                     <p>inkl moms + drönarleverans</p>
                 </div>
-                <button>Take my money!</button>
+                <button onClick={handleClick}>Take my money!</button>
             </div>
         </div>
             

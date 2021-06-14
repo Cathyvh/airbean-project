@@ -5,7 +5,7 @@ import Menu from './comps/menuComp'
 import About from './comps/aboutComp'
 import Status from './comps/statusComp'
 import Profile from './comps/profileComp'
-import LoginPage from './comps/loginform'
+import LoginForm from './comps/loginform'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Cart from './comps/CartComp';
 import ProductListing from "./comps/ProductList";
@@ -26,11 +26,8 @@ function App() {
               <Profile/> 
             </Route>
              <Route className="form" exact path="/login"> 
-              <LoginPage/> 
+              <LoginForm/> 
             </Route>
-            {/* <Route exact path="/cart"> 
-              <Cart/> 
-            </Route> */}
             <Route exact path="/status" > 
               <Status/> 
             </Route>

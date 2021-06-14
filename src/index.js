@@ -7,11 +7,14 @@ import { Provider } from 'react-redux'
 import { applyMiddleware, createStore } from 'redux'
 //import rootReducer from '../redux/rootReducer'
 import thunk from 'redux-thunk'
-import store from './redux/store'
 import { reduxForm } from 'redux-form'
+import reducers from "./redux/reducers/index";
 
 
-
+const store = createStore(
+  reducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+); 
 ReactDOM.render(
   <React.StrictMode>
     

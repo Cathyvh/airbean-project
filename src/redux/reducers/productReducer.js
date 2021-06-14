@@ -1,26 +1,24 @@
 const initialState = {
   products: [],
-  users:  {
-      userName: "",
-      passWord: "",
-      accountId: ""
-    },
+  currentUser:{},
+  userDatabase:{},
   cart:{
       items: [],
       total: 0
   },
-  open: false
+  orders:[],
+  open: false,
 };
 
-export const userReducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case "SET_USERS":
-      return { ...state, users: payload };
+// export const userReducer = (state = initialState.Login, action) => {
+//   switch (action.type) {
+//     case "SET_USERS":
+//       return { ...state, ...action.payload };
 
-    default:
-      return state;
-  }
-};
+//     default:
+//       return state;
+//   }
+// };
 
 
 export const openCart = (state= initialState, action)=>{
@@ -32,6 +30,64 @@ export const openCart = (state= initialState, action)=>{
     
   }
 }
+
+// export const idReducer = (state = initialState, { type, payload }) => {
+//   switch (type) {
+//     case "GET_ID":
+//       state.map(user => {
+//         if (userDatabase.userName !== action.payload) return ; 
+        
+//         });
+//       return { ...state.currentUser, currentUser: payload }
+
+//     default:
+//       return state;
+//   }
+// };
+
+export const idReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "ADD_ID":
+      return { ...state.currentUser, currentUser:  payload }
+
+    default:
+      return state;
+  }
+};
+
+export const currentUserReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "THIS_USER":
+      return { ...state.currentUser, currentUser: payload }
+
+    default:
+      return state;
+  }
+};
+export const userReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+
+     case "SET_USERS":
+      return { ...state.userDatabase, userDatabase: payload }
+
+
+    default:
+      return state;
+  }
+};
+
+export const orderReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+
+     case "ADD_ORDER":
+      return { ...state.userDatabase, userDatabase: payload }
+
+
+    default:
+      return state;
+  }
+};
+
 
 
 export const productReducer = (state = initialState, { type, payload }) => {
