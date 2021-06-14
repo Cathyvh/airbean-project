@@ -1,12 +1,12 @@
 const initialState = {
   products: [],
-  currentUser:{},
-  userDatabase:{},
-  cart:{
-      items: [],
-      total: 0
+  currentUser: {},
+  userDatabase: {},
+  cart: {
+    items: [],
+    total: 0
   },
-  orders:[],
+  orders: [],
   open: false,
 };
 
@@ -21,13 +21,13 @@ const initialState = {
 // };
 
 
-export const openCart = (state= initialState, action)=>{
-  switch(action.type){
+export const openCart = (state = initialState, action) => {
+  switch (action.type) {
     case 'OPEN_CART':
-      return{...state, open: !state.open  }
-      default:
+      return { ...state, open: !state.open }
+    default:
       return state;
-    
+
   }
 }
 
@@ -36,7 +36,7 @@ export const openCart = (state= initialState, action)=>{
 //     case "GET_ID":
 //       state.map(user => {
 //         if (userDatabase.userName !== action.payload) return ; 
-        
+
 //         });
 //       return { ...state.currentUser, currentUser: payload }
 
@@ -45,19 +45,10 @@ export const openCart = (state= initialState, action)=>{
 //   }
 // };
 
-export const idReducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case "ADD_ID":
-      return { ...state.currentUser, currentUser:  payload }
-
-    default:
-      return state;
-  }
-};
 
 export const currentUserReducer = (state = initialState, { type, payload }) => {
   switch (type) {
-    case "THIS_USER":
+    case "SET_USER":
       return { ...state.currentUser, currentUser: payload }
 
     default:
@@ -67,7 +58,7 @@ export const currentUserReducer = (state = initialState, { type, payload }) => {
 export const userReducer = (state = initialState, { type, payload }) => {
   switch (type) {
 
-     case "SET_USERS":
+    case "SET_USERS":
       return { ...state.userDatabase, userDatabase: payload }
 
 
@@ -79,7 +70,7 @@ export const userReducer = (state = initialState, { type, payload }) => {
 export const orderReducer = (state = initialState, { type, payload }) => {
   switch (type) {
 
-     case "ADD_ORDER":
+    case "ADD_ORDER":
       return { ...state.userDatabase, userDatabase: payload }
 
 
@@ -99,34 +90,34 @@ export const productReducer = (state = initialState, { type, payload }) => {
       return state;
   }
 };
-export const addProductReducer = (state= initialState.cart, action ) =>{
-  switch(action.type){
-    case 'ADD_PRODUCT':{
-            //let addedProduct = state.products.find(products => state.products.title === action.payload)
-            
-             return{
-                ...state,
-                 items: [...state.items, action.payload],
-                 total: state.total + action.payload.price
+export const addProductReducer = (state = initialState.cart, action) => {
+  switch (action.type) {
+    case 'ADD_PRODUCT': {
+      //let addedProduct = state.products.find(products => state.products.title === action.payload)
 
-                  }
+      return {
+        ...state,
+        items: [...state.items, action.payload],
+        total: state.total + action.payload.price
+
+      }
     }
-        default: {
-        return state;
+    default: {
+      return state;
     }
   }
 }
-export const totalReducer = (state= initialState.cart, action ) =>{
-  switch(action.type){
-    case 'CALC_TOTAL':{
-             return{
-                ...state,
-                 total: state.total + action.payload
+export const totalReducer = (state = initialState.cart, action) => {
+  switch (action.type) {
+    case 'CALC_TOTAL': {
+      return {
+        ...state,
+        total: state.total + action.payload
 
-                  }
+      }
     }
-        default: {
-        return state;
+    default: {
+      return state;
     }
   }
 }

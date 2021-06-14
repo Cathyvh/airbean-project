@@ -1,71 +1,52 @@
 
 
-export const thisUser = (values) => {
-    return {
-        type: "THIS_USER",
-        payload: values
-    }
+export const setUser = (values) => {
+  return {
+    type: "SET_USER",
+    payload: values
+  }
 }
 
-export const setUsers = (values) => {
-    return {
-        type: "SET_USERS",
-        payload: values
-    }
-}
+
 export const addId = (id) => {
-    return {
-        type: "ADD_ID",
-        payload: id
-    }
+  return {
+    type: "ADD_ID",
+    payload: id
+  }
 }
 
-
-// export function addUser(values, callback) {
-
-//   return dispatch => { //return function
-//     return axios.post(`http://localhost:5000/api/accounts/`,values,{headers}) //return post request response
-//     .then((users) => { //pass data in as a parameter, call the callback, dispatch the action. 
-//         callback();
-//       dispatch({
-//         type: ADD_USER,
-//         payload: users
-//       })
-//     })
-//   }
-// }
 
 
 export const setProducts = (products) => {
-    return {
-        type: "SET_PRODUCTS",
-        payload: products
-    }
+  return {
+    type: "SET_PRODUCTS",
+    payload: products
+  }
 }
 
 export const addOrder = (cart) => {
-    return {
-        type: "ADD_ORDER",
-        payload: cart
-    }
+  return {
+    type: "ADD_ORDER",
+    payload: cart
+  }
 }
 
 export const getId = (userName) => {
-    return {
-        type: "GET_ID",
-        payload: userName
-    }
+  return {
+    type: "GET_ID",
+    payload: userName
+  }
 }
 
 
 export const addProduct = (product) => {
-    return {
-        type: "ADD_PRODUCT",
-        payload: product
-    }
+  return {
+    type: "ADD_PRODUCT",
+    payload: product
+  }
 }
 export const openCart = (open) => {
-  return{
+  return {
     type: "OPEN_CART",
     payload: open
 
@@ -76,8 +57,8 @@ export const openCart = (open) => {
 
 export const selectedProduct = (product) => {
   return {
-      type: "SELECTED_PRODUCT",
-      payload: product
+    type: "SELECTED_PRODUCT",
+    payload: product
   }
 }
 

@@ -1,7 +1,5 @@
 import React from "react";
-import { useState } from 'react';
 import { useSelector, useDispatch } from "react-redux";
-
 import './cart.css'
 import { openCart } from "../redux/action"
 import { addOrder } from "../redux/action"
@@ -16,32 +14,32 @@ const Cart = () => {
     const dispatch = useDispatch();
     console.log(open.state, "test")
 
-    async function postOrder(data){
-    try{
-        let response = await fetch ('http://localhost:5000/api/order', {
-            method: 'POST',
-            headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-      },
-            body: JSON.stringify(data)
-        })
-        let responseJSON = await response.json()
-        return responseJSON
-        } catch(error) {
-        console.log(error)
+    async function postOrder(data) {
+        try {
+            let response = await fetch('http://localhost:5000/api/order', {
+                method: 'POST',
+                headers: {
+                    Accept: "application/json",
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data)
+            })
+            let responseJSON = await response.json()
+            return responseJSON
+        } catch (error) {
+            console.log(error)
+        }
     }
-}
-    
-    const handleCartOpen = () =>{
-      dispatch(openCart(open))
+
+    const handleCartOpen = () => {
+        dispatch(openCart(open))
     }
-    const handleClick = () =>{
-      postOrder({cart})
-        .then(data => console.log(data))
+    const handleClick = () => {
+        postOrder({ cart })
+            .then(data => console.log(data))
         dispatch(addOrder(cart))
     }
-    
+
 
     const renderCartList = cart.map((cart) => {
         const { id, title, price } = cart;
@@ -63,15 +61,15 @@ const Cart = () => {
         );
     });
 
-//className={` cart-container ${isOpen ? "showCart" : ""}`}
+    //className={` cart-container ${isOpen ? "showCart" : ""}`}
     return (
-    
+
         <div className="cart-container">
             <div className="wrapper">
-            <button onClick={handleCartOpen}className="cart-button" >
-                        <span > {amount} </span>
-                        <img className="img" src={bag} alt="" />
-            </button>
+                <button onClick={handleCartOpen} className="cart-button" >
+                    <span > {amount} </span>
+                    <img className="img" src={bag} alt="" />
+                </button>
             </div>
             <div className={` cart-card ${open ? "showCart" : "hideCart"}`}>
                 <h1 className="cart-header" >Din beställning</h1>
@@ -83,7 +81,7 @@ const Cart = () => {
                 <button onClick={handleClick}>Take my money!</button>
             </div>
         </div>
-            
+
     )
 }
 

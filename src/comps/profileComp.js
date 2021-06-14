@@ -1,67 +1,36 @@
 import './profile.css'
 import profileImg from '../img/Profile.png'
-import { useEffect, React } from "react";
-import axios from "axios";
-import { useSelector, useDispatch, connect } from "react-redux";
+import { useEffect, React, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import './coffeeComp.css'
-import { setUsers, addId } from "../redux/action";
-import {formValueSelector} from 'redux-form';
-import LoginForm from './loginform';
-
+import { getOrders } from '../utils/api';
 
 
 
 function Profile() {
-  const user = useSelector((state) => state.currentUserReducer.currentUser.userName)
-  const userdb = useSelector((state) => state.userReducer.userDatabase)
-  const dispatch = useDispatch();
-  
-const fetchUsers = async () => {
-    try {
-      const response = await axios.get("http://localhost:5000/api/accounts/")
-      console.log(response)
-      dispatch(setUsers(response.data));
-      
-      
-    } catch (err) {
-      console.log("Err: ", err);
+  const user = useSelector((state) => state.currentUserReducer.currentUser)
+  const [orders, setOrders] = useState([]);
+
+  useEffect(() => {
+    async function fetchData() {
+      const orderData = await getOrders(user.id);
+      console.log(orderData)
+      setOrders(orderData)
     }
-  };
+    fetchData();
 
-  useEffect (() => {
-  fetchUsers();
-
-  }, [])
-
-      console.log("user", userdb)
-      
-    const match  = userdb.find(userdb => userdb.userName === user); 
-    console.log("match" , match)
-  
-  // function getID(){
-  // console.log("user", userdb)
-  // const match  = userdb.find(userdb => userdb.userName === user); 
-  // return(
-  //     console.log("match" , match)
-
-  // )
-  // }
-
-
- // dispatch(addId(match.accountId));
-        
- 
-
+  }, [user.id])
+  //map orders to component list (31)
   return (
     <div className="profile">
-         
-        <div className="profile-content">
+      <div className="profile-content">
         <img className="profileImg" src={profileImg} alt="" />
-        <h2> {user} </h2>
+        <h2> {user.userName} </h2>
         <div className="orderhistorik">
-            <h2>Orderhistorik</h2>
+          <h2>Orderhistorik</h2>
+
         </div>
-        </div>
+      </div>
     </div>
   );
 };
