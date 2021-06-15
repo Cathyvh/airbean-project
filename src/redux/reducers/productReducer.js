@@ -70,8 +70,8 @@ export const userReducer = (state = initialState, { type, payload }) => {
 export const orderReducer = (state = initialState, { type, payload }) => {
   switch (type) {
 
-    case "ADD_ORDER":
-      return { ...state.userDatabase, userDatabase: payload }
+    case "SET_ORDER":
+      return { ...state.orders, orders: payload }
 
 
     default:

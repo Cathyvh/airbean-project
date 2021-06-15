@@ -2,42 +2,30 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import './cart.css'
 import { openCart } from "../redux/action"
-import { addOrder } from "../redux/action"
+import { setOrder } from "../redux/action"
 import bag from '../img/bag.svg'
-
+import { useHistory } from 'react-router-dom';
+import { postOrder } from '../utils/api'
 
 const Cart = () => {
     const cart = useSelector((state) => state.addProduct.items)
     const total = useSelector((state) => state.addProduct.total)
     const open = useSelector((state) => state.openCart.open)
     const amount = useSelector((state) => state.addProduct.items.length)
+    const user = useSelector((state) => state.currentUserReducer.currentUser.id)
     const dispatch = useDispatch();
     console.log(open.state, "test")
+    const history = useHistory()
 
-    async function postOrder(data) {
-        try {
-            let response = await fetch('http://localhost:5000/api/order', {
-                method: 'POST',
-                headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify(data)
-            })
-            let responseJSON = await response.json()
-            return responseJSON
-        } catch (error) {
-            console.log(error)
-        }
-    }
 
     const handleCartOpen = () => {
         dispatch(openCart(open))
     }
-    const handleClick = () => {
-        postOrder({ cart })
-            .then(data => console.log(data))
-        dispatch(addOrder(cart))
+    const handleClick = async () => {
+        const account = await postOrder({ cart, user })
+        console.log(account)
+        dispatch(setOrder(account))
+        history.push("/status")
     }
 
 

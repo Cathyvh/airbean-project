@@ -14,6 +14,23 @@ export async function postLogin(data) {
   }
 }
 
+export async function postOrder(data) {
+  try {
+    let response = await fetch('http://localhost:5000/api/order', {
+      method: 'POST',
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data)
+    })
+    return await response.json()
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+
 export async function getOrders(accountId) {
   try {
     const response = await fetch(`http://localhost:5000/api/order/${accountId}`)

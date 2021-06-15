@@ -24,10 +24,10 @@ export const setProducts = (products) => {
   }
 }
 
-export const addOrder = (cart) => {
+export const setOrder = (values) => {
   return {
-    type: "ADD_ORDER",
-    payload: cart
+    type: "SET_ORDER",
+    payload: values
   }
 }
 

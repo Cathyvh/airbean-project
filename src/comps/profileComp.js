@@ -20,6 +20,9 @@ function Profile() {
     fetchData();
 
   }, [user.id])
+
+  // const renderOrder = orders.map((order) => {
+  //   const { id, } = product;
   //map orders to component list (31)
   return (
     <div className="profile">
@@ -33,7 +36,8 @@ function Profile() {
       </div>
     </div>
   );
-};
+}
+
 
 
 export default Profile
