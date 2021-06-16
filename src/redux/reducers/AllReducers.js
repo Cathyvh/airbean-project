@@ -7,16 +7,13 @@ const initialState = {
     total: 0
   },
   orders: {
-    order: [],
+    id: 0,
+    eta: 0,
     orderTotal: 0
   },
   orderTotal: 0,
   open: false,
 };
-
-
-
-
 
 
 
@@ -46,7 +43,6 @@ export const userReducer = (state = initialState, { type, payload }) => {
     case "SET_USERS":
       return { ...state.userDatabase, userDatabase: payload }
 
-
     default:
       return state;
   }
@@ -58,28 +54,15 @@ export const orderReducer = (state = initialState.orders, action) => {
     case "SET_ORDER":
       return {
         ...state,
-        order: [...state.order, action.payload],
+        id: state.id = action.payload.id,
+        eta: state.eta = action.payload.eta,
         orderTotal: state.orderTotal + action.payload.total
       }
-
-
-
     default:
       return state;
   }
 };
 
-
-
-export const productReducer = (state = initialState, { type, payload }) => {
-  switch (type) {
-    case "SET_PRODUCTS":
-      return { ...state, products: payload };
-
-    default:
-      return state;
-  }
-};
 export const addProductReducer = (state = initialState.cart, action) => {
   switch (action.type) {
     case 'ADD_PRODUCT': {
@@ -103,6 +86,17 @@ export const addProductReducer = (state = initialState.cart, action) => {
     }
   }
 }
+
+export const productReducer = (state = initialState, { type, payload }) => {
+  switch (type) {
+    case "SET_PRODUCTS":
+      return { ...state, products: payload };
+
+    default:
+      return state;
+  }
+};
+
 export const totalReducer = (state = initialState.cart, action) => {
   switch (action.type) {
     case 'CALC_TOTAL': {
