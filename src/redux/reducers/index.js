@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { productReducer, addProductReducer, openCart, userReducer, currentUserReducer, orderReducer, resetCartReducer } from "./AllReducers";
+import { productReducer, addProductReducer, openCart, userReducer, currentUserReducer, orderReducer } from "./AllReducers";
 import { reducer as formReducer } from 'redux-form'
 
 
@@ -11,7 +11,7 @@ const reducers = combineReducers({
   currentUserReducer: currentUserReducer,
   form: formReducer,
   orderReducer: orderReducer,
-  resetCartReducer: resetCartReducer
+
 });
 
 export default reducers;

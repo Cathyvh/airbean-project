@@ -6,19 +6,18 @@ const initialState = {
     items: [],
     total: 0
   },
-  orders: [],
+  orders: {
+    order: [],
+    orderTotal: 0
+  },
+  orderTotal: 0,
   open: false,
 };
 
-// export const userReducer = (state = initialState.Login, action) => {
-//   switch (action.type) {
-//     case "SET_USERS":
-//       return { ...state, ...action.payload };
 
-//     default:
-//       return state;
-//   }
-// };
+
+
+
 
 
 export const openCart = (state = initialState, action) => {
@@ -31,29 +30,6 @@ export const openCart = (state = initialState, action) => {
   }
 }
 
-// export const idReducer = (state = initialState, { type, payload }) => {
-//   switch (type) {
-//     case "GET_ID":
-//       state.map(user => {
-//         if (userDatabase.userName !== action.payload) return ; 
-
-//         });
-//       return { ...state.currentUser, currentUser: payload }
-
-//     default:
-//       return state;
-//   }
-// };
-
-
-export const resetCartReducer = (state = initialState, { type }) => {
-  switch (type) {
-
-
-    default:
-      return state;
-  }
-};
 
 export const currentUserReducer = (state = initialState, { type, payload }) => {
   switch (type) {
@@ -76,11 +52,16 @@ export const userReducer = (state = initialState, { type, payload }) => {
   }
 };
 
-export const orderReducer = (state = initialState, { type, payload }) => {
-  switch (type) {
+export const orderReducer = (state = initialState.orders, action) => {
+  switch (action.type) {
 
     case "SET_ORDER":
-      return { ...state.orders, orders: payload, cart: null }
+      return {
+        ...state,
+        order: [...state.order, action.payload],
+        orderTotal: state.orderTotal + action.payload.total
+      }
+
 
 
     default:
@@ -102,13 +83,10 @@ export const productReducer = (state = initialState, { type, payload }) => {
 export const addProductReducer = (state = initialState.cart, action) => {
   switch (action.type) {
     case 'ADD_PRODUCT': {
-      //let addedProduct = state.products.find(products => state.products.title === action.payload)
-
       return {
         ...state,
         items: [...state.items, action.payload],
         total: state.total + action.payload.price
-
       }
     }
 

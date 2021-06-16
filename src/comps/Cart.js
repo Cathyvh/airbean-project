@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import './cart.css'
 import { openCart } from "../redux/action"
 import { setOrder } from "../redux/action"
+import { setOrderTotal } from "../redux/action"
 import { resetCart } from "../redux/action"
 import bag from '../img/bag.svg'
 import { useHistory } from 'react-router-dom';

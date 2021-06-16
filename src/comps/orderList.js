@@ -2,6 +2,7 @@ import './profile.css'
 import { useEffect, React, useState } from "react";
 import { useSelector } from "react-redux";
 import { getOrders } from '../utils/api';
+import { _ } from 'lodash'
 
 
 
@@ -12,6 +13,8 @@ function OrderList() {
     useEffect(() => {
         async function fetchData() {
             const orderData = await getOrders(user.id);
+            //const orderTotal = getOrders.total.reduce(function(value){return value})
+            //const orderTotal = _.sumBy(orders, )
             console.log("orderData:", orderData)
             setOrders(orderData)
         }
@@ -27,6 +30,7 @@ function OrderList() {
                 <li>{order.total}</li>
                 <li>{order.date}</li>
             </div>
+
         );
     })
 
@@ -35,7 +39,6 @@ function OrderList() {
             <div className="orderhistorik">
                 <ul>
                     {renderOrder}
-
                 </ul>
             </div>
         );

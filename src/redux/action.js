@@ -32,6 +32,12 @@ export const setProducts = (products) => {
   }
 }
 
+export const setOrders = (values) => {
+  return {
+    type: "SET_ORDERS",
+    payload: values
+  }
+}
 export const setOrder = (values) => {
   return {
     type: "SET_ORDER",
@@ -39,6 +45,12 @@ export const setOrder = (values) => {
   }
 }
 
+export const setOrderTotal = (values) => {
+  return {
+    type: "SET_ORDER_TOTAL",
+    payload: values
+  }
+}
 export const getId = (userName) => {
   return {
     type: "GET_ID",

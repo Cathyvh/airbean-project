@@ -8,6 +8,8 @@ import OrderList from './orderList';
 
 function Profile() {
     const user = useSelector((state) => state.currentUserReducer.currentUser)
+    const orderTotal = useSelector((state) => state.orderReducer.orderTotal)
+
     return (
         <div className="profile">
             <div className="profile-content">
@@ -18,7 +20,7 @@ function Profile() {
                     <div>
                         <OrderList />
                     </div>
-
+                    <p>totalt spenderat: {orderTotal}</p>
                 </div>
             </div>
         </div>
