@@ -1,9 +1,8 @@
 import { useEffect, React } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import Coffee from "./coffeeComp";
-import './coffeeComp.css'
+import Coffee from "./Coffee";
+import './Coffee.css'
 import { setProducts } from "../redux/action";
 
 function ProductList() {

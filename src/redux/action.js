@@ -1,5 +1,13 @@
 
 
+export const resetCart = () => {
+  return {
+    type: "RESET_CART",
+
+  }
+}
+
+
 export const setUser = (values) => {
   return {
     type: "SET_USER",

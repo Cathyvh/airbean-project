@@ -46,6 +46,15 @@ export const openCart = (state = initialState, action) => {
 // };
 
 
+export const resetCartReducer = (state = initialState, { type }) => {
+  switch (type) {
+
+
+    default:
+      return state;
+  }
+};
+
 export const currentUserReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case "SET_USER":
@@ -71,7 +80,7 @@ export const orderReducer = (state = initialState, { type, payload }) => {
   switch (type) {
 
     case "SET_ORDER":
-      return { ...state.orders, orders: payload }
+      return { ...state.orders, orders: payload, cart: null }
 
 
     default:
@@ -102,6 +111,15 @@ export const addProductReducer = (state = initialState.cart, action) => {
 
       }
     }
+
+    case "RESET_CART":
+      return {
+        ...state,
+        items: [],
+        total: 0
+
+      }
+
     default: {
       return state;
     }

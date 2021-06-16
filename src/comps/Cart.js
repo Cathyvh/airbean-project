@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import './cart.css'
 import { openCart } from "../redux/action"
 import { setOrder } from "../redux/action"
+import { resetCart } from "../redux/action"
 import bag from '../img/bag.svg'
 import { useHistory } from 'react-router-dom';
 import { postOrder } from '../utils/api'
@@ -22,9 +23,11 @@ const Cart = () => {
         dispatch(openCart(open))
     }
     const handleClick = async () => {
-        const account = await postOrder({ cart, user })
+        const account = await postOrder({ cart, user, total })
         console.log(account)
         dispatch(setOrder(account))
+        dispatch(resetCart())
+        dispatch(openCart(!open))
         history.push("/status")
     }
 

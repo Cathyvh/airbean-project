@@ -1,11 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import AddBtn from '../img/add.png'
-import './coffeeComp.css'
-import { useState } from 'react';
+import './Coffee.css'
 import { addProduct } from "../redux/action"
-import LoginForm from './Login'
+
 
 
 

@@ -1,5 +1,5 @@
 import headerImg from '../img/header.png'
-import Menu from './menuComp'
+import Menu from './Menu'
 import './headerFooterComp.css'
 
 function Header() {
@@ -7,10 +7,10 @@ function Header() {
 
   return (
     <div>
-        <Menu/>
-        <img className="header" src={headerImg} alt="header" />
+      <Menu />
+      <img className="header" src={headerImg} alt="header" />
     </div>
-    
+
   );
 };
 

@@ -30,7 +30,6 @@ export async function postOrder(data) {
   }
 }
 
-
 export async function getOrders(accountId) {
   try {
     const response = await fetch(`http://localhost:5000/api/order/${accountId}`)

@@ -12,7 +12,7 @@ function Status() {
         <img className="drone" src={drone} alt="drone" />
         <h1>Din beställning är på väg!</h1>
         <h3 className="mins" > <strong>{order.eta}</strong> minuter</h3>
-        <button className="status-button"><Link className="link" to="/">Ok, cool!</Link></button>
+        <button className="status-button"><Link className="link" to="/menu">Ok, cool!</Link></button>
       </div>
     </div>
   );

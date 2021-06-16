@@ -1,12 +1,12 @@
 
 import './style.css';
-import Menu from './comps/menuComp'
-import About from './comps/aboutComp'
-import Status from './comps/statusComp'
-import Profile from './comps/profileComp'
+import Menu from './comps/Menu'
+import About from './comps/About'
+import Status from './comps/Status'
+import Profile from './comps/Profile'
 import LoginForm from './comps/Login'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Cart from './comps/CartComp';
+import Cart from './comps/Cart';
 import Products from "./comps/ProductList";
 
 function App() {
@@ -17,6 +17,9 @@ function App() {
         <Cart />
         <Switch>
           <Route exact path="/">
+            <LoginForm />
+          </Route>
+          <Route path="/menu">
             <Products />
           </Route>
           <Route path="/about">
@@ -24,9 +27,6 @@ function App() {
           </Route>
           <Route path="/profile">
             <Profile />
-          </Route>
-          <Route path="/login">
-            <LoginForm />
           </Route>
           <Route path="/status" >
             <Status />
