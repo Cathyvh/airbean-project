@@ -62,12 +62,13 @@ const Cart = () => {
     return (
 
         <div>
-
-            <div className="wrapper">
-                <button onClick={handleCartOpen} className="cart-button" >
-                    <span > {amount} </span>
-                    <img className="img" src={bag} alt="" />
-                </button>
+            <div className="outerwrapper">
+                <div className="wrapper">
+                    <button onClick={handleCartOpen} className="cart-button" >
+                        <span > {amount} </span>
+                        <img className="img" src={bag} alt="" />
+                    </button>
+                </div>
             </div>
             <div className={` cart-container ${open ? "showCart" : "hideCart"}`}>
                 <div className={` cart-card ${open ? "showCart" : "hideCart"}`}>

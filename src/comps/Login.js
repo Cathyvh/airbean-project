@@ -63,7 +63,7 @@ const LoginForm = ({ handleSubmit }) => {
           </div>
           <div className="password">
             <label className="label" htmlFor="password">Lösenord</label>
-            <Field className="input" name="password" component="input" type="text" />
+            <Field className="input" name="password" component="input" type="password" />
           </div>
           <div className="gdpr">
             <Field className="check" name="gdpr" component="input" type="checkbox" />

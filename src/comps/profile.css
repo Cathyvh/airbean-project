@@ -25,3 +25,16 @@
 .orderhistorik+h2 {
     font-size: 22px;
 }
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    width: 90vw;
+    margin: -1.5em auto;
+
+
+}
+
+.ordertotal-comp {
+    margin-right: 1em;
+}

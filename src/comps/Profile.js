@@ -23,7 +23,7 @@ function Profile() {
                     </div>
                     <div className="order-total">
                         <p><strong>Totalt spenderat</strong> </p>
-                        <p><strong>{orderTotal} kr</strong> </p>
+                        <p className="ordertotal-comp"> <strong>{orderTotal} kr</strong> </p>
                     </div>
 
                 </div>

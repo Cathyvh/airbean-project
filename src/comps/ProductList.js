@@ -39,7 +39,7 @@ function ProductList() {
         <h1>Meny</h1>
         <Coffee />
       </div>
-
+      <Footer />
     </div>
 
   );
