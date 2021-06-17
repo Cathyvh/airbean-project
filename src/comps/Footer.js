@@ -1,19 +1,13 @@
-import headerImg from '../img/header.png'
-import './headerFooterComp.css'
+import footerImg from '../img/footer.png'
+import './Footer.css'
 
 
 
 
 function Footer() {
-
-
-
     return (
-        <footer>
-            <img src={headerImg} alt="header" />
-        </footer>
+        <img className="footer" src={footerImg} alt="footer" />
     );
-
 };
 
 

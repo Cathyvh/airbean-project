@@ -3,7 +3,7 @@ import profileImg from '../img/Profile.png'
 import { React } from "react";
 import { useSelector } from "react-redux";
 import OrderList from './orderList';
-
+import Navbar from './Navbar';
 
 
 function Profile() {
@@ -12,15 +12,20 @@ function Profile() {
 
     return (
         <div className="profile">
+            <Navbar />
             <div className="profile-content">
                 <img className="profileImg" src={profileImg} alt="" />
                 <h2> {user.userName} </h2>
-                <div className="orderhistorik">
+                <div className="order-history">
                     <h2>Orderhistorik</h2>
-                    <div>
+                    <div className="order-container">
                         <OrderList />
                     </div>
-                    <p>totalt spenderat: {orderTotal}</p>
+                    <div className="order-total">
+                        <p><strong>Totalt spenderat</strong> </p>
+                        <p><strong>{orderTotal} kr</strong> </p>
+                    </div>
+
                 </div>
             </div>
         </div>

@@ -3,7 +3,7 @@ import { useEffect, React, useState } from "react";
 import { useSelector } from "react-redux";
 import { getOrders } from '../utils/api';
 import { _ } from 'lodash'
-
+import "./orderlist.css"
 
 
 function OrderList() {
@@ -13,8 +13,6 @@ function OrderList() {
     useEffect(() => {
         async function fetchData() {
             const orderData = await getOrders(user.id);
-            //const orderTotal = getOrders.total.reduce(function(value){return value})
-            //const orderTotal = _.sumBy(orders, )
             console.log("orderData:", orderData)
             setOrders(orderData)
         }
@@ -25,11 +23,22 @@ function OrderList() {
     const renderOrder = orders.map((order) => {
 
         return (
-            <div>
-                <li>{order.id}</li>
-                <li>{order.total}</li>
-                <li>{order.date}</li>
+            <div className="order-item" >
+                <div className="order-content">
+                    <div className="order-id">
+                        <p id="left" className="id"> #{order.id} </p>
+                        <p id="left" className="order-sum-text"> total ordersumma</p>
+                    </div>
+                    <div className="orde-total-date">
+                        <p id="right" className="date"> {order.date} </p>
+                        <p id="right" className="total"> {order.total} kr </p>
+                    </div>
+                </div>
+                <div className="order-line"></div>
+
             </div>
+
+
 
         );
     })
@@ -37,9 +46,7 @@ function OrderList() {
     if (orders.length > 0) {
         return (
             <div className="orderhistorik">
-                <ul>
-                    {renderOrder}
-                </ul>
+                {renderOrder}
             </div>
         );
     } else {

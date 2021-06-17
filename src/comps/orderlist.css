@@ -1,0 +1,76 @@
+.order-container {
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+.order-line {
+    width: 95%;
+    border-bottom: rgba(255, 255, 255, 0.11) 1px solid;
+}
+
+.order-line :last-child {
+    border-bottom: white;
+}
+
+.order-item {
+    display: flex;
+    margin: 1rem 0;
+    flex-direction: column;
+
+}
+
+
+
+.order-content {
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    width: 80vw;
+    justify-content: space-between;
+    margin: 0 auto;
+
+
+}
+
+
+.id .date .total {
+    font-size: 23px;
+    margin: 0;
+}
+
+.order-sum-text {
+    margin: 0 0 1rem 0;
+    font-size: 12px;
+}
+
+.id {
+    margin: 0;
+    height: 1.5rem;
+
+}
+
+.date {
+    margin: 0;
+    height: 1.5rem;
+
+}
+
+.total {
+    margin-top: 0rem;
+    font-size: 12px;
+    text-align: right;
+
+}
+
+
+
+.order-id {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-left: -1rem;
+}

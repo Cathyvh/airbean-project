@@ -11,7 +11,6 @@ const initialState = {
     eta: 0,
     orderTotal: 0
   },
-  orderTotal: 0,
   open: false,
 };
 

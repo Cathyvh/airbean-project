@@ -1,20 +1,22 @@
 
 import './style.css';
-import Menu from './comps/Menu'
+
 import About from './comps/About'
 import Status from './comps/Status'
 import Profile from './comps/Profile'
 import LoginForm from './comps/Login'
+import Menu from './comps/Menu'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Cart from './comps/Cart';
+
+
 import Products from "./comps/ProductList";
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
+
         <Menu />
-        <Cart />
         <Switch>
           <Route exact path="/">
             <LoginForm />

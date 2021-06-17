@@ -4,6 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import Coffee from "./Coffee";
 import './Coffee.css'
 import { setProducts } from "../redux/action";
+import Cart from './Cart'
+import Navbar from './Navbar';
+import Footer from './Footer'
 
 function ProductList() {
 
@@ -28,10 +31,17 @@ function ProductList() {
   console.log("Products :", products);
 
   return (
-    <div className="container">
-      <h1>Meny</h1>
-      <Coffee />
+    <div>
+      <Cart />
+      <Navbar />
+
+      <div className="coffee-container">
+        <h1>Meny</h1>
+        <Coffee />
+      </div>
+
     </div>
+
   );
 }
 

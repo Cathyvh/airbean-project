@@ -6,6 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 import reducers from "./redux/reducers/index";
+import UseMobile from './comps/Usemobile'
 
 const store = createStore(
   reducers,
@@ -15,6 +16,7 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
+      <UseMobile />
       <App />
     </Provider>
   </React.StrictMode>,

@@ -1,10 +1,14 @@
-.container {
-    margin: 7rem auto;
+.coffee-container {
+    margin: -1em auto 2em auto;
     text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
 
+}
+
+.coffee-container h1 {
+    font-size: 42px;
 }
 
 .item {
@@ -23,17 +27,19 @@
 .title {
     margin: 0;
     height: 2rem;
+    font-size: 23px;
 
 }
 
 .price {
     margin: 0;
     height: 2rem;
+    font-size: 23px;
 
 }
 
 .desc {
-    margin-top: 0.5rem;
+    margin-top: 0.1rem;
     font-size: 12px;
 
 }

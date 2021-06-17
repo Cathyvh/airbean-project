@@ -1,8 +1,9 @@
+//import store from "../redux";
 import { useState } from 'react';
 import Hamburger from 'hamburger-react'
 import { Link, } from 'react-router-dom';
 import './menu.css'
-import headerImg from '../img/header.png'
+
 
 
 export default function Menu() {
@@ -27,7 +28,7 @@ export default function Menu() {
         <div className="navBar">
             {/* <img className="headerImg" src={headerImg} alt="header" /> */}
             <div className="buttons">
-                <div className="hamburger" >
+                <div className={` hamburger ${isOpen ? "showMenu" : ""}`}>
                     <Hamburger
                         toggled={isOpen}
                         toggle={setOpen}
@@ -38,10 +39,6 @@ export default function Menu() {
                     />
                 </div>
                 <div className="wrapper">
-                    {/* <button onClick={handleCartOpen}className="cart-button" >
-                        <span > {amount} </span>
-                        <img className="img" src={bag} alt="" />
-                    </button> */}
 
                 </div>
             </div>
